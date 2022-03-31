@@ -1,0 +1,18 @@
+.red {
+  color: blue;
+  &__item {
+    color: red;
+  }
+}
+
+body {
+	background-color: red;
+}
+
+.block {
+	height: 100px;
+	width: 100px;
+	background-color: black;
+}
+
+@import 'second';

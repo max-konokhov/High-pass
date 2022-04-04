@@ -4,15 +4,104 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="img/favicon_ico.png" rel="icon">
   <link rel="stylesheet" href="css/main.min.css">
-  <title>Document</title>
+  <title>High pass</title>
 </head>
+
 <body>
-  -------------
-  <div class="red">123456789</div>
-  <svg class="">
-    <use xlink:href="img/sprite.svg#logo_big"></use>
-  </svg>
-  <script src="js/main.js"></script>
+  <header class="header">
+    <div class="header__container container">
+      <a href="#" class="header__logo-link">
+        <img class="header__logo-image" src="img/logo.png" alt="Логотип High pass">
+      </a>
+      <nav class="header__nav">
+        <button class="header__burger">burger</button>
+        <div class="header__menu-wrap">
+          <button class="header__btn-close-burger">x</button>
+          <ul class="header__menu-list menu">
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">О студии</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Наши проекты</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Услуги</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Мастер-классы</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Контакты</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="header__social-list soc-list">
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico">
+              <use xlink:href="img/sprite.svg#instagram_ico"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico">
+              <use xlink:href="img/sprite.svg#facebook_ico"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico">
+              <use xlink:href="img/sprite.svg#vk_ico"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <button class="header__btn-open"></button>
+      <form action="/" class="header__form">
+        <input class="header__input" type="text">
+        <button class="header__btn-close"></button>
+      </form>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section banner">
+      <div class="container banner-box"></div>
+    </section>
+
+    <section class="section studio">
+      <div class="container studio-box"></div>
+    </section>
+
+    <section class="section projects">
+      <div class="container projects-box"></div>
+    </section>
+
+    <section class="section contacts">
+      <div class="container contacts-box"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box"></div>
+  </footer>
+
 </body>
 </html>

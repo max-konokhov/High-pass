@@ -5,16 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="img/favicon_ico.png" rel="icon">
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.min.css">
+  <script defer src="js/main.js"></script>
   <title>High pass</title>
 </head>
 
 <body>
   <header class="header">
     <div class="header__container container">
+
       <a href="#" class="header__logo-link">
         <img class="header__logo-image" src="img/logo.png" alt="Логотип High pass">
       </a>
+
       <nav class="header__nav">
         <button class="header__burger">burger</button>
         <div class="header__menu-wrap">
@@ -52,38 +60,51 @@
       <ul class="header__social-list soc-list">
         <li class="soc-list__item">
           <a href="#" class="soc-list__link">
-            <svg class="soc-list__ico">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite.svg#instagram_ico"></use>
             </svg>
           </a>
         </li>
         <li class="soc-list__item">
           <a href="#" class="soc-list__link">
-            <svg class="soc-list__ico">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite.svg#facebook_ico"></use>
             </svg>
           </a>
         </li>
         <li class="soc-list__item">
           <a href="#" class="soc-list__link">
-            <svg class="soc-list__ico">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
               <use xlink:href="img/sprite.svg#vk_ico"></use>
             </svg>
           </a>
         </li>
       </ul>
 
-      <button class="header__btn-open"></button>
-      <form action="/" class="header__form">
-        <input class="header__input" type="text">
-        <button class="header__btn-close"></button>
+
+      <form class="header__form js-search-form" action="/" >
+        <button class="header__btn-open js-btn-search-open" type="button">
+          <svg class="header__btn-open-ico" width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#loop"></use>
+          </svg>
+        </button>
+
+        <input class="header__input js-search-input" type="text" placeholder="Что будем искать?">
+
+        <button class="header__btn-close js-btn-search-close" type="button">
+          <svg class="header__btn-close-ico" width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#close_ico"></use>
+          </svg>
+        </button>
       </form>
     </div>
   </header>
 
   <main class="main">
     <section class="section banner">
-      <div class="container banner-box"></div>
+      <div class="container banner-box">
+        <a class="text" href="#">Lorem ipsum dolor </a>
+      </div>
     </section>
 
     <section class="section studio">
@@ -105,3 +126,5 @@
 
 </body>
 </html>
+
+

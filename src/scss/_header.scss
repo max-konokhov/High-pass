@@ -7,18 +7,19 @@
 
   &__container {
     display: flex;
+    position: relative;
     padding-top: 24px;
     padding-bottom: 25px;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden;
   }
+
   &__logo-link {
     flex-shrink: 0;
     line-height: 0;
   }
-  // &__logo-image {
-  //   display: block;
-  // }
+
   &__btn-close-burger {
     display: none;
   }
@@ -33,18 +34,99 @@
     display: none;
   }
 
+
+  // ФОРМА ПОИСКА
+  &__form {
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  // КНОПКА "ОТКРЫТЬ ФОРМУ"
   &__btn-open {
     display: none;
+    position: relative;
+    order:2;
+    line-height: 0;
   }
 
-  &__form {
+  // ИКОНКА
+  &__btn-open-ico {
+    fill: #BCBCBC;
+    transition: fill $short;
+  }
+
+  // ЭФФЕКТЫ ДЛЯ КНОПКИ "ОТКРЫТЬ ФОРМУ"
+  &__btn-open:hover &__btn-open-ico {
+    fill: $color-orange;
+  }
+
+  &__btn-open:not(:hover):not(:active):focus &__btn-open-ico {
+    fill: $color-dark-orange;
+  }
+
+  &__btn-open:active &__btn-open-ico {
+    fill: $color-saturated-orange;
+  }
+
+  // ИНПУТ ДЛЯ ФОРМЫ ПОИСКА
+  &__input {
+    position: absolute;
     display: none;
+    right: 34px;
+    top: 22px;
+    min-width: 169px;
+    padding-left: 3px;
+    border: none;
+    font-family: 'TT Firs Neue';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    border-bottom: 1px solid $color-white;
+    color: $color-white;
+    background-color: $color-dark;
+    transition: border-color $short;
   }
 
+  // СОСТОЯНИЯ ИНПУТА
+  &__input:hover {
+    border-color: $color-orange;
+  }
 
+  &__input:focus {
+    border-color: $color-saturated-orange;
+  }
 
+  &__input::placeholder {
+    color: $color-white;
+  }
+
+  // КНОПКА "ЗАКРЫТЬ" ФОРМУ
+  &__btn-close {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 0;
+  }
+
+  // ИКОНКА ЗАКРЫТЬ
+  &__btn-close-ico {
+    fill: $color-orange;
+    transition: fill $short;
+  }
+
+  &__btn-close:hover &__btn-close-ico {
+    fill: $color-saturated-orange;
+  }
+
+  &__btn-close:focus:not(:hover) &__btn-close-ico {
+    fill: $color-dark-orange;
+  }
 }
 
+// СПИСОК ГЛАВНОГО МЕНЮ
 .menu {
   display: flex;
   margin: 0;
@@ -59,26 +141,47 @@
     margin-right: 79px;
   }
 
+  // ССЫЛКИ МЕНЮ
   &__link {
     position: relative;
+    transition: color $short;
   }
 
+  // СОСТОЯНИЯ ССЫЛОК МЕНЮ И ПСЕВДОЭЛЕМЕНТОВ
   &__link:hover {
     color: $color-orange;
   }
 
-  &__link-text::before {
+  &__link:focus {
+    outline: none;
+  }
+
+  &__link:active {
+    color: $color-saturated-orange;
+  }
+
+  &__link::before {
     position: absolute;
     content: '';
-    left: 0;
-    right: 0;
+    left: -5px;
+    right: -5px;
     top: 0;
     bottom: 0;
+    opacity: 0;
+    background-color: $color-dark-orange;
+    transition: opacity $short;
+  }
 
+  &__link:focus:not(:hover):not(:active)::before {
+    opacity: 1;
+  }
+
+  &__link-text {
+    position: relative;
   }
 }
 
-
+// СПИСОК ССЫЛОК СОЦСЕТЕЙ
 .soc-list {
   display: flex;
   min-width: 130px;
@@ -90,10 +193,102 @@
   line-height: 0;
   flex-wrap: wrap;
 
+  // ИКОНКИ ССЫЛОК СОЦСЕТЕЙ
   &__ico {
-    width: 30px;
-    height: 30px;
+    display: block;
+    fill: #CACACA;
+    transition: fill $short;
   }
 
+  // СОСТОЯНИЯ ИКОНОК
+  &__link:hover &__ico {
+    fill: $color-orange;
+    }
+
+  &__link:not(:hover):not(:active):focus &__ico {
+    fill: $color-dark-orange;
+  }
+
+  &__link:active &__ico {
+    fill: $color-saturated-orange;
+  }
+}
+
+
+
+
+@media (max-width: 1280px) {
+  .header {
+    &__container {
+      padding-top: 26px;
+      padding-bottom: 27px;
+    }
+
+    &__logo-image {
+      width: 166px;
+    }
+
+    &__btn-open {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      transition-property: opacity, visibility;
+      transition-duration: 0.3s;
+    }
+
+    &__btn-open.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__input {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition-property: opacity, visibility, transform;
+        transition-duration: 0.3s;
+        transform-origin: right;
+    }
+
+    &__input.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    &__btn-close {
+      display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-duration: 0.3s;
+    }
+
+    &__btn-close.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+
+
+  .menu {
+    &__item:not(:last-child) {
+      margin-right: 33px;
+    }
+  }
+
+  .soc-list {
+    display: none;
+  }
+}
+
+@media (max-width: 970px) {
+  // .header {
+  //   &__container {
+
+  //   }
+  // }
 }
 

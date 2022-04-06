@@ -1,2 +1,1 @@
-import {asd}  from './func';
-asd();
+import './_form';

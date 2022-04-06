@@ -5,8 +5,13 @@ html {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
 }
 
 a {
@@ -20,15 +25,53 @@ img, svg {
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font-TTFN;
   font-size: 16px;
-  margin: 0;
   color: $color-dark;
+  background-color: $color-white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+svg path {
+  fill: inherit;
+}
+
+// Класс для визуального скрытия элементов
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }
 
 .container {
-  max-width: 1390px;
+  max-width: $container-max;
   margin: 0 auto;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+
+
+
+
+
+@media (max-width: 1280px) {
+  .container {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
 }

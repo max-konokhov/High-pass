@@ -1,18 +1,6 @@
-.red {
-  color: blue;
-  &__item {
-    color: red;
-  }
-}
+@import '../../node_modules/normalize.css/normalize.css';
+@import 'variables';
+@import 'fonts';
+@import 'global';
+@import 'header';
 
-body {
-	background-color: red;
-}
-
-.block {
-	height: 100px;
-	width: 100px;
-	background-color: black;
-}
-
-@import 'second';

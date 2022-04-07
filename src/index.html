@@ -4,15 +4,140 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="img/favicon_ico.png" rel="icon">
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.min.css">
-  <title>Document</title>
+  <script defer src="js/main.js"></script>
+  <title>High pass</title>
 </head>
+
 <body>
-  -------------
-  <div class="red">123456789</div>
-  <svg class="">
-    <use xlink:href="img/sprite.svg#logo_big"></use>
-  </svg>
-  <script src="js/main.js"></script>
+  <header class="header">
+    <div class="header__container container">
+
+      <!-- Логотип -->
+      <a class="header__logo-link">
+        <img class="header__logo-image" src="img/logo.png" alt="Логотип High pass">
+      </a>
+
+      <!-- Навигация -->
+      <nav class="header__nav">
+        <button class="header__burger js-burger">
+          <svg class="header__burger-ico" width="20" height="18" viewbox="0 0 20 18" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#burger_ico"></use>
+          </svg>
+        </button>
+
+        <!-- Обверка главного меню и кнопки закрыть -->
+        <div class="header__menu-wrap js-menu-wrap">
+          <button class="header__btn-close-burger js-close-burger">
+            <svg class="header__close-burger-ico" width="18" height="18" viewbox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#close_ico"></use>
+            </svg>
+          </button>
+
+          <!-- Главное меню-список -->
+          <ul class="header__menu-list menu">
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">О студии</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Наши проекты</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Услуги</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Мастер-классы</span>
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">
+                <span class="menu__link-text">Контакты</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <ul class="header__social-list soc-list">
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#instagram_ico"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#facebook_ico"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc-list__item">
+          <a href="#" class="soc-list__link">
+            <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="img/sprite.svg#vk_ico"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+
+      <form class="header__form js-search-form" action="/" >
+        <button class="header__btn-open js-btn-search-open" type="button">
+          <svg class="header__btn-open-ico" width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#loop"></use>
+          </svg>
+        </button>
+
+        <input class="header__input js-search-input" type="text" placeholder="Что будем искать?">
+
+        <button class="header__btn-close js-btn-search-close" type="button">
+          <svg class="header__btn-close-ico" width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href="img/sprite.svg#close_ico"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="section banner">
+      <div class="container banner-box">
+      </div>
+    </section>
+
+    <section class="section studio">
+      <div class="container studio-box"></div>
+    </section>
+
+    <section class="section projects">
+      <div class="container projects-box"></div>
+    </section>
+
+    <section class="section contacts">
+      <div class="container contacts-box"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box"></div>
+  </footer>
+
 </body>
 </html>
+
+

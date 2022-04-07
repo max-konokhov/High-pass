@@ -1,0 +1,457 @@
+.header {
+  font-family: 'TT Firs Neue', 'san-serif';
+  font-weight: 400;
+  line-height: 21px;
+  color: $color-white;
+  background-color: $color-dark;
+
+  &__container {
+    display: flex;
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 25px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-link {
+    flex-shrink: 0;
+    line-height: 0;
+  }
+
+
+  // БЛОК НАВИГАЦИИ
+  &__nav {
+    display: flex;
+    margin-left: 50px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  // БУРГЕР КНОПКА
+  &__burger {
+    display: none;
+    position: relative;
+    line-height: 0;
+  }
+
+  // ИКОНКА БУРГЕРА
+  &__burger-ico {
+    fill: $color-white;
+    transition: fill $short;
+  }
+
+  // СОСТОЯНИЕ ACTIVE БУРГЕРА
+  &__burger:active &__burger-ico {
+    fill: $color-orange;
+  }
+  //---------------------------------
+
+   // КНОПКА ЗАКРЫТЬ БУРГЕР МЕНЮ
+  &__btn-close-burger {
+    display: none;
+    line-height: 0;
+  }
+
+  // ИКОНКА ЗАКРЫТЬ БУРГЕР МЕНЮ
+  &__close-burger-ico {
+    fill: $color-light-grey;
+    transition: fill $short;
+  }
+
+  // СОСТОЯНИЕ КНОПКИ ЗАКРЫТЬ БУРГЕР
+  &__btn-close-burger:active &__close-burger-ico {
+    fill: $color-orange;
+  }
+  // --------------------------------
+
+  // ФОРМА ПОИСКА
+  &__form {
+    display: none;
+    position: relative;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  // КНОПКА "ОТКРЫТЬ ФОРМУ"
+  &__btn-open {
+    display: none;
+    position: relative;
+    order:2;
+    line-height: 0;
+  }
+
+  // ИКОНКА
+  &__btn-open-ico {
+    fill: #BCBCBC;
+    transition: fill $short;
+  }
+
+  // ЭФФЕКТЫ ДЛЯ КНОПКИ "ОТКРЫТЬ ФОРМУ"
+  &__btn-open:hover &__btn-open-ico {
+    fill: $color-orange;
+  }
+
+  &__btn-open:not(:hover):not(:active):focus &__btn-open-ico {
+    fill: $color-dark-orange;
+  }
+
+  &__btn-open:active &__btn-open-ico {
+    fill: $color-saturated-orange;
+  }
+
+  // ИНПУТ ДЛЯ ФОРМЫ ПОИСКА
+  &__input {
+    position: absolute;
+    display: none;
+    right: 34px;
+    top: 22px;
+    min-width: 169px;
+    padding-left: 3px;
+    border: none;
+    font-family: 'TT Firs Neue';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    border-bottom: 1px solid $color-white;
+    color: $color-white;
+    background-color: $color-dark;
+    transition: border-color $short;
+  }
+
+  // СОСТОЯНИЯ ИНПУТА
+  &__input:hover {
+    border-color: $color-orange;
+  }
+
+  &__input:focus {
+    border-color: $color-saturated-orange;
+  }
+
+  &__input::placeholder {
+    color: $color-white;
+  }
+
+  // КНОПКА "ЗАКРЫТЬ" ФОРМУ
+  &__btn-close {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 0;
+  }
+
+  // ИКОНКА ЗАКРЫТЬ
+  &__btn-close-ico {
+    fill: $color-orange;
+    transition: fill $short;
+  }
+
+  &__btn-close:hover &__btn-close-ico {
+    fill: $color-saturated-orange;
+  }
+
+  &__btn-close:focus:not(:hover) &__btn-close-ico {
+    fill: $color-dark-orange;
+  }
+
+
+  // СПИСОК ГЛАВНОГО МЕНЮ
+  .menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__item:not(:last-child) {
+      margin-right: 79px;
+    }
+
+    // ССЫЛКИ МЕНЮ
+    &__link {
+      position: relative;
+      transition: color $short;
+    }
+
+    // СОСТОЯНИЯ ССЫЛОК МЕНЮ И ПСЕВДОЭЛЕМЕНТОВ
+    &__link:hover {
+      color: $color-orange;
+    }
+
+    &__link:focus {
+      outline: none;
+    }
+
+    &__link:active {
+      color: $color-saturated-orange;
+    }
+
+    &__link::before {
+      position: absolute;
+      content: '';
+      left: -5px;
+      right: -5px;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+      background-color: $color-dark-orange;
+      transition: opacity $short;
+    }
+
+    &__link:focus:not(:hover):not(:active)::before {
+      opacity: 1;
+    }
+
+    &__link-text {
+      position: relative;
+    }
+  }
+
+  // СПИСОК ССЫЛОК СОЦСЕТЕЙ
+  .soc-list {
+    display: flex;
+    min-width: 130px;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    line-height: 0;
+    flex-wrap: wrap;
+
+    // ИКОНКИ ССЫЛОК СОЦСЕТЕЙ
+    &__ico {
+      display: block;
+      fill: #CACACA;
+      transition: fill $short;
+    }
+
+    // СОСТОЯНИЯ ИКОНОК
+    &__link:hover .soc-list__ico {
+      fill: $color-orange;
+    }
+
+    &__link:not(:hover):not(:active):focus .soc-list__ico {
+      fill: $color-dark-orange;
+    }
+
+    &__link:active .soc-list__ico {
+      fill: $color-saturated-orange;
+    }
+  }
+}
+
+
+
+
+
+
+
+@media (max-width: 1280px) {
+  .header {
+    &__container {
+      padding-top: 27px;
+      padding-bottom: 26px;
+    }
+
+    &__logo-image {
+      width: 166px;
+    }
+
+    &__nav {
+      margin-left: 0;
+      margin-right: 50px;
+    }
+
+    &__form {
+      display: block;
+    }
+
+    &__btn-open {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      transition-property: opacity, visibility;
+      transition-duration: 0.3s;
+    }
+
+    &__btn-open.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__input {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition-property: opacity, visibility, transform;
+        transition-duration: 0.3s;
+        transform-origin: right;
+    }
+
+    &__input.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    &__btn-close {
+      display: block;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-duration: 0.3s;
+    }
+
+    &__btn-close.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu {
+      // margin-left: 0;
+      &__item:not(:last-child) {
+        margin-right: 33px;
+      }
+    }
+
+    .soc-list {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .header {
+    &__container {
+      flex-wrap: wrap;
+      row-gap: 26px;
+      padding-bottom: 0;
+    }
+
+    &__nav {
+      position: relative;
+      margin-right: 0;
+      order: 2;
+      width: 100%;
+      padding: 12px 0;
+    }
+
+    &__nav::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: -27px;
+      right: -27px;
+      background-color: $color-grey;
+    }
+
+    &__menu-wrap {
+      width: 100%;
+    }
+
+    .menu {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .header {
+    &__container {
+      padding-top: 25px;
+      row-gap: 25px;
+    }
+
+    &__logo-image {
+      width: 112px;
+    }
+
+    &__nav {
+      padding-top: 14px;
+      padding-bottom: 13px;
+    }
+
+    &__nav::before {
+      left: -21px;
+      right: -21px;
+    }
+
+    &__burger {
+      display: block;
+    }
+
+    &__menu-wrap {
+      display: flex;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 70px;
+      bottom: 0;
+      transform: scaleX(0);
+      padding: 14px 21px;
+      flex-direction:  column;
+      align-items: start;
+      z-index: 2;
+      border-top: 1px solid $color-light-grey;
+      background-color: $color-dark;
+      visibility: hidden;
+      opacity: 0;
+      transition-property: visibility, transform, opacity;
+      transition-duration: 0.5s;
+      transform-origin: left;
+    }
+
+    &__menu-wrap.is-open {
+      transform: scaleX(1);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__btn-close-burger.visible {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    &__btn-open-ico {
+      width: 20px;
+      height: 20px;
+    }
+
+    .menu {
+      flex-direction: column;
+      align-items: start;
+
+      &__item:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__form {
+      position: static;
+    }
+
+    &__input {
+      left: 21px;
+      right: 70px;
+      top: 26px;
+    }
+
+    &__btn-close {
+      width: 18px;
+      height: 18px;
+      right: 23px;
+      top: 26px;
+    }
+  }
+}
+

@@ -1,0 +1,91 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: $font-TTFN;
+  font-size: 16px;
+  color: $color-dark;
+  background-color: $color-white;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+svg path {
+  fill: inherit;
+}
+
+// Класс для визуального скрытия элементов
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+
+
+
+
+
+@media (max-width: 1280px) {
+  .container {
+    padding-left: 31px;
+    padding-right: 31px;
+  }
+}
+
+@media (max-width: 970px) {
+  .container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}

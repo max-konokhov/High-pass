@@ -75,3 +75,17 @@ svg path {
     padding-right: 31px;
   }
 }
+
+@media (max-width: 970px) {
+  .container {
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    padding-left: 21px;
+    padding-right: 21px;
+  }
+}

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ФОРМА ПОИСКА
   const btnOpenSearch = document.querySelector('.js-btn-search-open');
   const btnCloseSearch = document.querySelector('.js-btn-search-close');
-  // const searchForm = document.querySelector('.js-search-form');
   const searchInput = document.querySelector('.js-search-input');
 
   function openSearchForm() {
@@ -22,10 +22,26 @@ document.addEventListener('DOMContentLoaded', function () {
   btnCloseSearch.addEventListener('click', closeSearchForm);
 
 
+  // БУРГЕР-МЕНЮ
+  const btnBurger = document.querySelector('.js-burger');
+  const btnCloseBurger = document.querySelector('.js-close-burger');
+  const menu = document.querySelector('.js-menu-wrap');
 
+  function openMainMenu() {
+    btnCloseBurger.classList.add('visible');
+    menu.classList.add('is-open');
+    btnBurger.classList.add('hidden');
+  }
 
+  btnBurger.addEventListener('click', openMainMenu);
 
+  function closeMainMenu() {
+    btnCloseBurger.classList.remove('visible');
+    menu.classList.remove('is-open');
+    btnBurger.classList.remove('hidden');
+  }
 
+  btnCloseBurger.addEventListener('click', closeMainMenu);
 
 
 

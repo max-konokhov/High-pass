@@ -5,44 +5,49 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnCloseSearch = document.querySelector('.js-btn-search-close');
   const searchInput = document.querySelector('.js-search-input');
 
-  function openSearchForm() {
-    btnCloseSearch.classList.add('visible');
-    searchInput.classList.add('visible');
-    btnOpenSearch.classList.add('hidden');
-  }
+  const searchBlockTimeLine = gsap.timeline({paused: true});
 
-  btnOpenSearch.addEventListener('click', openSearchForm);
+  // Анимация формы
+  searchBlockTimeLine
+    .to(btnOpenSearch, {visibility: 'hidden', opacity: 0, duration: 0.4})
+    .to(searchInput, {display: 'block', scaleX: 1, opacity: 1, duration: 0.3}, "-=0.4")
+    .to(btnCloseSearch, {display: 'block', opacity: 1, duration: 0.4}, "-=0.7");
 
-  function closeSearchForm() {
-    btnCloseSearch.classList.remove('visible');
-    searchInput.classList.remove('visible');
-    btnOpenSearch.classList.remove('hidden');
-  }
+  btnOpenSearch.addEventListener('click', function() {
+    searchBlockTimeLine.play();
 
-  btnCloseSearch.addEventListener('click', closeSearchForm);
+  });
+
+  btnCloseSearch.addEventListener('click', function() {
+    searchBlockTimeLine.reverse();
+  });
+
+
+
 
 
   // БУРГЕР-МЕНЮ
   const btnBurger = document.querySelector('.js-burger');
   const btnCloseBurger = document.querySelector('.js-close-burger');
-  const menu = document.querySelector('.js-menu-wrap');
+  const menuWrap = document.querySelector('.js-menu-wrap');
 
-  function openMainMenu() {
-    btnCloseBurger.classList.add('visible');
-    menu.classList.add('is-open');
-    btnBurger.classList.add('hidden');
-  }
-
-  btnBurger.addEventListener('click', openMainMenu);
-
-  function closeMainMenu() {
-    btnCloseBurger.classList.remove('visible');
-    menu.classList.remove('is-open');
-    btnBurger.classList.remove('hidden');
-  }
-
-  btnCloseBurger.addEventListener('click', closeMainMenu);
+  const burgerTimeLine = gsap.timeline({paused: true});
 
 
+  // Анимация Бургер-меню
+  burgerTimeLine
+    .to(menuWrap, {display: 'block',  scaleX: 1, duration: 0.4})
+    .to(btnCloseBurger, {opacity: 1, duration: 0.7})
+    .to('.menu', {opacity: 1, scaleY: 1, duration: 0.4}, "-=0.7");
+
+  btnBurger.addEventListener('click', function() {
+    burgerTimeLine.play();
+
+  });
+
+  btnCloseBurger.addEventListener('click', function() {
+    burgerTimeLine.reverse();
+
+  });
 
 });

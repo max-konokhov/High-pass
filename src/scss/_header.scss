@@ -19,15 +19,16 @@
     line-height: 0;
   }
 
-
   // БЛОК НАВИГАЦИИ
   &__nav {
-    display: flex;
-    margin-left: 50px;
-    justify-content: space-between;
-    align-items: center;
+    padding-left: 100px;
+    padding-right: 50px;
   }
 
+  &__menu-wrap {
+    display: block;
+    transform: scaleX(1);
+  }
   // БУРГЕР КНОПКА
   &__burger {
     display: none;
@@ -47,7 +48,7 @@
   }
   //---------------------------------
 
-   // КНОПКА ЗАКРЫТЬ БУРГЕР МЕНЮ
+  // КНОПКА ЗАКРЫТЬ БУРГЕР МЕНЮ
   &__btn-close-burger {
     display: none;
     line-height: 0;
@@ -65,19 +66,8 @@
   }
   // --------------------------------
 
-  // ФОРМА ПОИСКА
-  &__form {
-    display: none;
-    position: relative;
-    align-items: center;
-    background-color: transparent;
-  }
-
   // КНОПКА "ОТКРЫТЬ ФОРМУ"
   &__btn-open {
-    display: none;
-    position: relative;
-    order:2;
     line-height: 0;
   }
 
@@ -100,6 +90,15 @@
     fill: $color-saturated-orange;
   }
 
+
+  // ФОРМА ПОИСКА
+  &__form {
+    display: none;
+    position: relative;
+    line-height: 0;
+    background-color: transparent;
+  }
+
   // ИНПУТ ДЛЯ ФОРМЫ ПОИСКА
   &__input {
     position: absolute;
@@ -116,7 +115,10 @@
     border-bottom: 1px solid $color-white;
     color: $color-white;
     background-color: $color-dark;
-    transition: border-color $short;
+    transform: scaleX(0);
+    transform-origin: right;
+    opacity: 0;
+    z-index: 1;
   }
 
   // СОСТОЯНИЯ ИНПУТА
@@ -139,6 +141,9 @@
     right: 0;
     top: 0;
     line-height: 0;
+    opacity: 0;
+    z-index: 1;
+
   }
 
   // ИКОНКА ЗАКРЫТЬ
@@ -154,93 +159,88 @@
   &__btn-close:focus:not(:hover) &__btn-close-ico {
     fill: $color-dark-orange;
   }
+}
 
+// СПИСОК ГЛАВНОГО МЕНЮ
+.menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  align-items: center;
 
-  // СПИСОК ГЛАВНОГО МЕНЮ
-  .menu {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 
-    &__item:not(:last-child) {
-      margin-right: 79px;
-    }
-
-    // ССЫЛКИ МЕНЮ
-    &__link {
-      position: relative;
-      transition: color $short;
-    }
-
-    // СОСТОЯНИЯ ССЫЛОК МЕНЮ И ПСЕВДОЭЛЕМЕНТОВ
-    &__link:hover {
-      color: $color-orange;
-    }
-
-    &__link:focus {
-      outline: none;
-    }
-
-    &__link:active {
-      color: $color-saturated-orange;
-    }
-
-    &__link::before {
-      position: absolute;
-      content: '';
-      left: -5px;
-      right: -5px;
-      top: 0;
-      bottom: 0;
-      opacity: 0;
-      background-color: $color-dark-orange;
-      transition: opacity $short;
-    }
-
-    &__link:focus:not(:hover):not(:active)::before {
-      opacity: 1;
-    }
-
-    &__link-text {
-      position: relative;
-    }
+  &__item:not(:last-child) {
+    margin-right: 79px;
   }
 
-  // СПИСОК ССЫЛОК СОЦСЕТЕЙ
-  .soc-list {
-    display: flex;
-    min-width: 130px;
-    padding: 0;
-    margin: 0;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-    line-height: 0;
-    flex-wrap: wrap;
+  // ССЫЛКИ МЕНЮ
+  &__link {
+    position: relative;
+    transition: color $short;
+  }
 
-    // ИКОНКИ ССЫЛОК СОЦСЕТЕЙ
-    &__ico {
-      display: block;
-      fill: #CACACA;
-      transition: fill $short;
-    }
+  // СОСТОЯНИЯ ССЫЛОК МЕНЮ И ПСЕВДОЭЛЕМЕНТОВ
+  &__link:hover {
+    color: $color-orange;
+  }
 
-    // СОСТОЯНИЯ ИКОНОК
-    &__link:hover .soc-list__ico {
-      fill: $color-orange;
-    }
+  &__link:focus {
+    outline: none;
+  }
 
-    &__link:not(:hover):not(:active):focus .soc-list__ico {
-      fill: $color-dark-orange;
-    }
+  &__link:active {
+    color: $color-saturated-orange;
+  }
 
-    &__link:active .soc-list__ico {
-      fill: $color-saturated-orange;
-    }
+  &__link::before {
+    position: absolute;
+    content: '';
+    left: -5px;
+    right: -5px;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: $color-dark-orange;
+    transition: opacity $short;
+  }
+
+  &__link:focus:not(:hover):not(:active)::before {
+    opacity: 1;
+  }
+
+  &__link-text {
+    position: relative;
+  }
+}
+
+// СПИСОК ССЫЛОК СОЦСЕТЕЙ
+.soc-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  flex-shrink: 0;
+  line-height: 0;
+
+  // ИКОНКИ ССЫЛОК СОЦСЕТЕЙ
+  &__ico {
+    display: block;
+    fill: #CACACA;
+    transition: fill $short;
+  }
+
+  // СОСТОЯНИЯ ИКОНОК
+  &__link:hover .soc-list__ico {
+    fill: $color-orange;
+  }
+
+  &__link:not(:hover):not(:active):focus .soc-list__ico {
+    fill: $color-dark-orange;
+  }
+
+  &__link:active .soc-list__ico {
+    fill: $color-saturated-orange;
   }
 }
 
@@ -262,66 +262,24 @@
     }
 
     &__nav {
-      margin-left: 0;
-      margin-right: 50px;
+      padding-left: 50px;
+      padding-right: 100px;
     }
 
     &__form {
       display: block;
-    }
 
-    &__btn-open {
-      display: block;
-      visibility: visible;
-      opacity: 1;
-      transition-property: opacity, visibility;
-      transition-duration: 0.3s;
     }
+  }
 
-    &__btn-open.hidden {
-        opacity: 0;
-        visibility: hidden;
+  .menu {
+    &__item:not(:last-child) {
+      margin-right: 33px;
     }
+  }
 
-    &__input {
-        display: block;
-        opacity: 0;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition-property: opacity, visibility, transform;
-        transition-duration: 0.3s;
-        transform-origin: right;
-    }
-
-    &__input.visible {
-        opacity: 1;
-        visibility: visible;
-        transform: scaleX(1);
-    }
-
-    &__btn-close {
-      display: block;
-        opacity: 0;
-        visibility: hidden;
-        transition-property: opacity, visibility;
-        transition-duration: 0.3s;
-    }
-
-    &__btn-close.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .menu {
-      // margin-left: 0;
-      &__item:not(:last-child) {
-        margin-right: 33px;
-      }
-    }
-
-    .soc-list {
-      display: none;
-    }
+  .soc-list {
+    display: none;
   }
 }
 
@@ -354,14 +312,14 @@
     &__menu-wrap {
       width: 100%;
     }
+  }
 
-    .menu {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-left: 0;
-    }
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0;
   }
 }
 
@@ -391,7 +349,8 @@
     }
 
     &__menu-wrap {
-      display: flex;
+      display: none;
+      width: 100vw;
       position: fixed;
       left: 0;
       right: 0;
@@ -401,39 +360,21 @@
       padding: 14px 21px;
       flex-direction:  column;
       align-items: start;
-      z-index: 2;
+      z-index: 10;
       border-top: 1px solid $color-light-grey;
       background-color: $color-dark;
-      visibility: hidden;
-      opacity: 0;
-      transition-property: visibility, transform, opacity;
-      transition-duration: 0.5s;
       transform-origin: left;
     }
 
-    &__menu-wrap.is-open {
-      transform: scaleX(1);
-      visibility: visible;
-      opacity: 1;
-    }
-
-    &__btn-close-burger.visible {
+    &__btn-close-burger {
       display: block;
       margin-bottom: 16px;
+      opacity: 0;
     }
 
     &__btn-open-ico {
       width: 20px;
       height: 20px;
-    }
-
-    .menu {
-      flex-direction: column;
-      align-items: start;
-
-      &__item:not(:last-child) {
-        margin-bottom: 30px;
-      }
     }
 
     &__form {
@@ -451,6 +392,19 @@
       height: 18px;
       right: 23px;
       top: 26px;
+    }
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: start;
+    transform: scaleY(0);
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+
+    &__item:not(:last-child) {
+      margin-bottom: 30px;
     }
   }
 }

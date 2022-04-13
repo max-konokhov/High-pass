@@ -30,24 +30,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const btnBurger = document.querySelector('.js-burger');
   const btnCloseBurger = document.querySelector('.js-close-burger');
   const menuWrap = document.querySelector('.js-menu-wrap');
+  const menuList = document.querySelector('.menu');
 
-  const burgerTimeLine = gsap.timeline({paused: true});
+  // const burgerTimeLine = gsap.timeline({paused: true});
+
+  const burgerTimeLine = gsap.timeline({
+    onReverseComplete: () => {
+        // очищаю анимационные стили после реверса
+        menuWrap.style.display = null;
+        menuWrap.style.transform = null;
+        btnCloseBurger.style.opacity = null;
+        menuList.style.opacity = null;
+        menuList.style.transform = null;
+
+    },
+    paused: true,
+  });
 
 
   // Анимация Бургер-меню
   burgerTimeLine
     .to(menuWrap, {display: 'block',  scaleX: 1, duration: 0.4})
     .to(btnCloseBurger, {opacity: 1, duration: 0.7})
-    .to('.menu', {opacity: 1, scaleY: 1, duration: 0.4}, "-=0.7");
+    .to(menuList, {opacity: 1, scaleY: 1, duration: 0.4}, "-=0.7");
 
   btnBurger.addEventListener('click', function() {
     burgerTimeLine.play();
-
   });
 
   btnCloseBurger.addEventListener('click', function() {
     burgerTimeLine.reverse();
-
   });
 
 });

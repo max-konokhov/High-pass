@@ -24,6 +24,10 @@ img, svg {
   height: auto;
 }
 
+img, picture, svg {
+  display: block;
+}
+
 body {
   font-family: $font-TTFN;
   font-size: 16px;
@@ -57,6 +61,32 @@ svg path {
   overflow: hidden;
 }
 
+.btn-submit-form {
+  font-family: $font-Roboto;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  padding: 16px 22px 15px;
+  background-color: $color-orange;
+  color: $color-white;
+  transition-property: outline, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+  outline-offset: -3px;
+
+  &:hover {
+    background-color: $color-dark-orange;
+  }
+
+  &:not(:hover):not(:active):focus {
+    outline: 3px solid $color-saturated-orange;
+  }
+
+  &:active {
+    background-color: $color-saturated-orange;
+  }
+}
+
 .container {
   max-width: $container-max;
   margin: 0 auto;
@@ -87,5 +117,11 @@ svg path {
   .container {
     padding-left: 21px;
     padding-right: 21px;
+  }
+
+  .btn-submit-form {
+    padding: 12px 22px;
+    font-size: 14px;
+    line-height: 16px;
   }
 }

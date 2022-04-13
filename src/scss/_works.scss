@@ -1,0 +1,209 @@
+.works {
+  padding-top: 41px;
+  padding-bottom: 68px;
+  color: $color-white;
+  line-height: 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  &__event {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px 15px 60px 60px;
+    align-items: start;
+    justify-content: space-between;
+    background-image: url('../img/event_1920.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  &__event-box {
+    padding-right: 25px;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__examples-picture {
+    display: block;
+  }
+
+  &__caption {
+    margin-bottom: 3px;
+    font-family: 'Roboto';
+    line-height: 19px;
+  }
+
+  &__header {
+    margin-bottom: 20px;
+    max-width: 420px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 37px;
+  }
+
+  &__more-link {
+    display: inline-block;
+    padding: 15px 22px 16px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    line-height: 19px;
+    background-color: $color-orange;
+    transition-property: outline, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    outline-offset: -3px;
+  }
+
+  &__more-link:hover {
+    background-color: $color-dark-orange;
+  }
+
+  &__more-link:not(:hover):not(:active):focus {
+    outline: 3px solid $color-saturated-orange;
+  }
+
+  &__more-link:active {
+    background-color: $color-saturated-orange;
+  }
+
+  &__hashtag {
+    align-self: flex-end;
+    margin-bottom: 50px;
+    padding: 7px 15px 7px 14px;
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16px;
+    background-color: $color-dark-grey;
+  }
+
+  &__examples-header {
+    margin-top: -7px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 25px;
+    color: $color-dark;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  &__list-item--long {
+    grid-column: span 2;
+  }
+}
+
+
+@media(max-width: 1280px) {
+  .works {
+    padding-top: 34px;
+
+    &__event {
+      padding-left: 30px;
+      padding-bottom: 30px;
+      background-image: url('../img/event_1024.jpg');
+    }
+
+    &__examples-header {
+      margin-top: 0;
+    }
+  }
+}
+
+
+@media(max-width: 970px) {
+  .works {
+    padding-top: 36px;
+
+
+    &__event {
+      background-image: url('../img/event_768.jpg');
+    }
+
+    &__caption {
+      margin-bottom: 13px;
+    }
+
+    &__header {
+      margin-bottom: 24px;
+      font-size: 34px;
+      line-height: 31px;
+    }
+
+    &__examples-header {
+      margin-bottom: 19px;
+      font-size: 23px;
+      line-height: 21px;
+
+    }
+  }
+}
+
+
+@media(max-width: 576px) {
+  .works {
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    &__event {
+      min-height: 422px;
+      padding: 6px 5px 30px 30px;
+      background-image: url('../img/event_320.jpg');
+    }
+
+    &__hashtag {
+      padding: 4px 7px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14px;
+    }
+
+    &__event-box {
+      padding-right: 25px;
+    }
+
+    &__caption {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+    &__header {
+      margin-bottom: 15px;
+      font-size: 24px;
+      line-height: 26px;
+    }
+
+    &__more-link {
+      padding: 12px 22px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+
+
+    &__examples-header {
+      margin-bottom: 16px;
+      font-size: 18px;
+      line-height: 19px;
+    }
+
+    &__examples-image {
+      width: 100%;
+    }
+  }
+}

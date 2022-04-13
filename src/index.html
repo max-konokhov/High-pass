@@ -118,13 +118,78 @@
   </header>
 
   <main class="main">
-    <section class="section banner">
-      <div class="container banner-box">
+
+    <!-- Секция "Работы" -->
+    <section class="section works">
+      <div class="works__container container">
+        <article class="works__event">
+          <p class="works__hashtag">#мастеркласс</p>
+          <div class="works__event-box">
+            <p class="works__caption">Мастер-класс от Игоря Робова</p>
+            <h2 class="works__header">Неоновый фотосет&nbsp;2.0 7&nbsp;июля&nbsp;20:00</h2>
+            <a class="works__more-link" href="#">Узнать больше</a>
+          </div>
+        </article>
+
+        <div class="works__examples">
+          <h3 class="works__examples-header">Работы участников предыдущего мастер-класса</h3>
+          <ul class="works__list">
+            <li class="works__list-item works__list-item--long">
+              <picture class="works__examples-picture">
+                <source media="(max-width: 420px)" srcset="img/examples_1_320.jpg">
+                <source media="(max-width: 768px)" srcset="img/examples_1_768.jpg">
+                <source media="(max-width: 1024px)" srcset="img/examples_1_1024.jpg">
+                <source media="(min-width: 1025px)" srcset="img/examples_1_1920.jpg">
+
+                <!-- Здесь картинка от 1025 до 1920 и выше -->
+                <img class="works__examples-image" src="img/examples_1_1920.jpg" alt="Пример работы">
+              </picture>
+            </li>
+            <li class="works__list-item">
+              <picture class="works__examples-picture">
+                <source media="(max-width: 420px)" srcset="img/examples_2_320.jpg">
+                <source media="(max-width: 768px)" srcset="img/examples_2_768.jpg">
+                <source media="(max-width: 1024px)" srcset="img/examples_2_1024.jpg">
+                <source media="(min-width: 1025px)" srcset="img/examples_2_1920.jpg">
+
+                <!-- Здесь картинка от 1025 до 1920 и выше -->
+                <img class="works__examples-image" src="img/examples_2_1920.jpg" alt="Пример работы">
+              </picture>
+            </li>
+            <li class="works__list-item">
+              <picture class="works__examples-picture">
+                <source media="(max-width: 420px)" srcset="img/examples_3_320.jpg">
+                <source media="(max-width: 768px)" srcset="img/examples_3_768.jpg">
+                <source media="(max-width: 1024px)" srcset="img/examples_3_1024.jpg">
+                <source media="(min-width: 1025px)" srcset="img/examples_3_1920.jpg">
+
+                <!-- Здесь картинка от 1025 до 1920 и выше -->
+                <img class="works__examples-image" src="img/examples_3_1920.jpg" alt="Пример работы">
+              </picture>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section class="section studio">
-      <div class="container studio-box"></div>
+      <div class="studio__container container">
+        <h2 class="studio__header">О студии</h2>
+        <p class="studio__description">В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.</p>
+        <div class="studio__form-box">
+          <div class="studio__image-box"></div>
+          <p class="studio__form-caption">Подписаться на рассылку</p>
+          <form class="studio__form">
+            <label class="studio__label-input">
+              <span class="studio__form-message"></span>
+              <input class="studio__input js-email-input" type="email" placeholder="E-mail" required aria-label="Введите адрес электронной почты">
+            </label>
+            <button class="studio__btn-submit btn-submit-form">Отправить</button>
+          </form>
+        </div>
+      </div>
+
+
     </section>
 
     <section class="section projects">

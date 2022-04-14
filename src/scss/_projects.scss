@@ -1,0 +1,170 @@
+.projects {
+  padding-top: 68px;
+  padding-bottom: 34px;
+  font-family: $font-Roboto;
+
+  &__header {
+    margin-bottom: 12px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+
+  &__list-item {
+    grid-column: span 2;
+  }
+
+  &__list-item--fuji, &__list-item--oblivion {
+    grid-column: span 6;
+  }
+
+  &__list-item--retouch, &__list-item--portret {
+    grid-column: span 3;
+  }
+
+  &__article--fuji, &__article--oblivion {
+    padding: 22px 30px 30px;
+    color: $color-white;
+  }
+}
+
+.article {
+  display: flex;
+  position: relative;
+  min-height: 300px;
+  flex-direction: column;
+
+  &__picture {
+    margin-bottom: 18px;
+
+    &--fuji, &--oblivion {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__image--ovlivion, &__image--fuji {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    position: relative;
+    max-width: 270px;
+    margin-bottom: 8px;
+    @include art-header;
+  }
+
+  &__description {
+    line-height: 22px;
+
+    &--fuji, &--oblivion {
+      position: relative;
+      max-width: 292px;
+    }
+  }
+
+  &__date {
+    display: flex;
+    margin-top: auto;
+    align-items: center;
+
+    &--fuji, &--oblivion {
+      position: relative;
+      margin-top: 0;
+    }
+  }
+
+  &__calendar-svg {
+    margin-right: 5px;
+    color: $color-light-grey-two;
+
+    &--fuji, &--oblivion {
+      margin-bottom: 2px;
+      color: $color-white;
+    }
+  }
+
+  &__text-date {
+    font-size: 12px;
+    line-height: 22px;
+    color: $color-light-grey-two;
+
+    &--fuji, &--oblivion {
+      color: $color-white;
+    }
+  }
+
+  &__link {
+    position: relative;
+    margin-top: auto;
+    align-self: start;
+    padding: 14px 20px 13px;
+    border: 3px solid $color-orange;
+    transition-property: border-color, background-color;
+    transition-duration:  0.3s;
+    transition-timing-function: ease;
+
+    &:hover {
+      background-color: $color-orange;
+    }
+
+    &:focus:not(:active):not(:hover) {
+      background-color: $color-dark-orange;
+    }
+
+    &:active {
+      background-color: $color-saturated-orange;
+      border-color: $color-saturated-orange;
+    }
+  }
+
+  &__hashtag {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+  }
+}
+
+@media(max-width: 1280px) {
+  .projects {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    &__list-item--object {
+      grid-column: span 4;
+    }
+    &__list-item--fuji, &__list-item--oblivion {
+      grid-column: span 6;
+    }
+
+    &__list-item--retouch, &__list-item--portret {
+      grid-column: span 3;
+    }
+  }
+
+
+  .article {
+    min-height: 285px;
+
+    &__image--object {
+
+    }
+  }
+}
+

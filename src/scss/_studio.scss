@@ -1,7 +1,6 @@
 .studio {
   padding-top: 30px;
   padding-bottom: 69px;
-  font-family: $font-Roboto;
   color: $color-white;
   background-color: $color-dark;
 
@@ -14,19 +13,17 @@
   &__header {
     grid-column: span 2;
     margin-bottom: 5px;
-    font-family: $font-Roboto;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 31px;
   }
 
   &__description {
     line-height: 28px;
+    font-family: $font-Roboto;
     color: $color-filthy-white;
   }
 
   &__form-box {
     margin-top: -3px;
+    font-family: $font-Roboto;
   }
 
   &__image-box {
@@ -64,6 +61,7 @@
   &__input {
     width: 100%;
     padding: 15px 23px 16px;
+    font-family: $font-Roboto;
     background-color: $color-grey;
     border: none;
     line-height: 19px;

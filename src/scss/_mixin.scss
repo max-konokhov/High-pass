@@ -1,0 +1,13 @@
+@mixin header-two {
+  font-family: $font-TTFN;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+@mixin art-header {
+  font-family: $font-TTFN;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}

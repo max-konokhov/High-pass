@@ -76,11 +76,6 @@
   &__hashtag {
     align-self: flex-end;
     margin-bottom: 50px;
-    padding: 7px 15px 7px 14px;
-    font-family: 'Roboto';
-    font-size: 14px;
-    line-height: 16px;
-    background-color: $color-dark-grey;
   }
 
   &__examples-header {
@@ -164,13 +159,6 @@
       min-height: 422px;
       padding: 6px 5px 30px 30px;
       background-image: url('../img/event_320.jpg');
-    }
-
-    &__hashtag {
-      padding: 4px 7px;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 14px;
     }
 
     &__event-box {

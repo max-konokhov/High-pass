@@ -43,27 +43,27 @@
           <!-- Главное меню-список -->
           <ul class="header__menu-list menu">
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#studio" class="menu__link js-scroll">
                 <span class="menu__link-text">О студии</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#projects" class="menu__link js-scroll">
                 <span class="menu__link-text">Наши проекты</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#" class="menu__link js-scroll">
                 <span class="menu__link-text">Услуги</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#" class="menu__link js-scroll">
                 <span class="menu__link-text">Мастер-классы</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">
+              <a href="#contacts" class="menu__link js-scroll">
                 <span class="menu__link-text">Контакты</span>
               </a>
             </li>
@@ -120,7 +120,7 @@
   <main class="main">
 
     <!-- Секция "Работы" -->
-    <section class="section works">
+    <section class="section works" id="works">
       <div class="works__container container">
         <article class="works__event">
           <p class="works__hashtag hashtag">#мастеркласс</p>
@@ -172,7 +172,8 @@
       </div>
     </section>
 
-    <section class="section studio">
+    <!-- Секция "О студии" -->
+    <section class="section studio" id="studio">
       <div class="studio__container container">
         <h2 class="studio__header header-two">О студии</h2>
         <p class="studio__description">В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада требует от&nbsp;нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и&nbsp;ресурсов. Безусловно, граница обучения кадров предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально-технической и&nbsp;кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и&nbsp;нарушающими общечеловеческие нормы этики.</p>
@@ -192,23 +193,25 @@
 
     </section>
 
-    <section class="section projects">
+    <!-- Секция "Проекты" -->
+    <section class="section projects" id="projects">
       <div class="projects__container container">
         <h2 class="projects__header header-two">Наши проекты</h2>
         <ul class="projects__list">
+
+          <!-- Пейзаж (№1) -->
           <li class="projects__list-item projects__list-item--landscape">
-
-            <article class="projects__article article">
+            <article class="projects__article article article--landscape">
               <picture class="article__picture">
-                <source media="(max-width: 420px)" srcset="img/art1_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art1_1024.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art1_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art1_1920.jpg">
+                <source media="(max-width: 576px)" srcset="img/art1_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art1_1024.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art1_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art1_1920.jpg">
 
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image" src="img/art1_1920.jpg" alt="Пример работы">
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image" src="img/art1_1920.jpg" alt="Пейзаж">
               </picture>
-              <p class="article__description">Синтетически, смешаны с не уникальными данными до степени...</p>
+              <p class="article__description">Синтетически, смешаны с не уникальными <span class="article__hidden-text">данными до степени...</span></p>
               <div class="article__date">
                 <svg class="article__calendar-svg" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#calendar_ico"></use>
@@ -219,18 +222,19 @@
             </article>
           </li>
 
+          <!-- Портрет (№2) -->
           <li class="projects__list-item projects__list-item--port">
-            <article class="projects__article article">
+            <article class="projects__article article article--port">
               <picture class="article__picture">
-                <source media="(max-width: 420px)" srcset="img/art2_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art2_1024.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art2_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art2_1920.jpg">
+                <source media="(max-width: 576px)" srcset="img/art2_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art2_1024.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art2_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art2_1920.jpg">
 
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image" src="img/art2_1920.jpg" alt="Пример работы">
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image" src="img/art2_1920.jpg" alt="Портрет">
               </picture>
-              <p class="article__description">В своём стремлении улучшить опыт мы упускаем, что явные...</p>
+              <p class="article__description">В своём стремлении улучшить опыт мы <span class="article__hidden-text">упускаем, что явные...</span></p>
               <div class="article__date">
                 <svg class="article__calendar-svg" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#calendar_ico"></use>
@@ -240,16 +244,18 @@
               <p class="article__hashtag hashtag">#портрет</p>
             </article>
           </li>
-          <li class="projects__list-item projects__list-item--object">
-            <article class="projects__article article">
-              <picture class="article__picture">
-                <source media="(max-width: 420px)" srcset="img/art3_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art3_768.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art3_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art3_1920.jpg">
 
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image article__image--object" src="img/art3_1920.jpg" alt="Пример работы">
+          <!-- Предмет (№3) -->
+          <li class="projects__list-item projects__list-item--object">
+            <article class="projects__article article article--object">
+              <picture class="article__picture">
+                <source media="(max-width: 576px)" srcset="img/art3_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art3_768.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art3_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art3_1920.jpg">
+
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image article__image--object" src="img/art3_1920.jpg" alt="Предмет">
               </picture>
               <p class="article__description">Равным образом, высокое качество позиционных...</p>
               <div class="article__date">
@@ -262,17 +268,9 @@
             </article>
           </li>
 
+          <!-- Fuji (№4) -->
           <li class="projects__list-item projects__list-item--fuji">
-            <article class="projects__article article projects__article--fuji">
-              <picture class="article__picture article__picture--fuji">
-                <source media="(max-width: 420px)" srcset="img/art4_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art4_768.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art4_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art4_1920.jpg">
-
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image article__image--fuji" src="img/art4_1920.jpg" alt="Пример работы">
-              </picture>
+            <article class="projects__article article article--fuji article--big">
               <div class="article__date article__date--fuji">
                 <svg class="article__calendar-svg article__calendar-svg--fuji" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#calendar_ico"></use>
@@ -286,17 +284,9 @@
             </article>
           </li>
 
+          <!-- Oblivion (№5) -->
           <li class="projects__list-item projects__list-item--oblivion">
-            <article class="projects__article article projects__article--oblivion">
-              <picture class="article__picture article__picture--oblivion">
-                <source media="(max-width: 420px)" srcset="img/art5_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art5_768.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art5_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art5_1920.jpg">
-
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image article__image--ovlivion" src="img/art5_1920.jpg" alt="Пример работы">
-              </picture>
+            <article class="projects__article article article--oblivion article--big">
               <div class="article__date article__date--oblivion">
                 <svg class="article__calendar-svg article__calendar-svg--oblivion" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#calendar_ico"></use>
@@ -309,16 +299,18 @@
               <p class="article__hashtag hashtag">#проектзабвение</p>
             </article>
           </li>
-          <li class="projects__list-item projects__list-item--retouch">
-            <article class="projects__article article">
-              <picture class="article__picture">
-                <source media="(max-width: 420px)" srcset="img/art6_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art6_768.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art6_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art6_1920.jpg">
 
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image" src="img/art6_1920.jpg" alt="Пример работы">
+          <!-- Ретушь (№6) -->
+          <li class="projects__list-item projects__list-item--retouch">
+            <article class="projects__article article article--retouch">
+              <picture class="article__picture">
+                <source media="(max-width: 576px)" srcset="img/art6_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art6_768.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art6_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art6_1920.jpg">
+
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image" src="img/art6_1920.jpg" alt="Ретушь">
               </picture>
               <p class="article__description">Как принято считать, многие известные личности и по сей день остаются уделом либералов...</p>
               <div class="article__date">
@@ -331,16 +323,17 @@
             </article>
           </li>
 
+          <!-- Портрет-2 (№7) -->
           <li class="projects__list-item projects__list-item--portret">
-            <article class="projects__article article">
+            <article class="projects__article article article--portret">
               <picture class="article__picture">
-                <source media="(max-width: 420px)" srcset="img/art7_320.jpg">
-                <source media="(max-width: 768px)" srcset="img/art7_1024.jpg">
-                <source media="(max-width: 1024px)" srcset="img/art7_1024.jpg">
-                <source media="(min-width: 1025px)" srcset="img/art7_1920.jpg">
+                <source media="(max-width: 576px)" srcset="img/art7_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art7_1024.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art7_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art7_1920.jpg">
 
-                <!-- Здесь картинка от 1025 до 1920 и выше -->
-                <img class="article__image" src="img/art7_1920.jpg" alt="Пример работы">
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image" src="img/art7_1920.jpg" alt="Портрет">
               </picture>
               <p class="article__description">С учётом сложившейся международной обстановки, новая модель организационной...</p>
               <div class="article__date">
@@ -356,8 +349,9 @@
       </div>
     </section>
 
-    <section class="section contacts">
-      <div class="container contacts-box"></div>
+    <!-- Секция "Проекты" -->
+    <section class="section contacts" id="contacts">
+      <div class="contacts__container container"></div>
     </section>
   </main>
 

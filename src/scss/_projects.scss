@@ -7,6 +7,7 @@
     margin-bottom: 12px;
   }
 
+  // ГРИД-СПИСОК (12 столбцов)
   &__list {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -24,41 +25,33 @@
   &__list-item--retouch, &__list-item--portret {
     grid-column: span 3;
   }
-
-  &__article--fuji, &__article--oblivion {
-    padding: 22px 30px 30px;
-    color: $color-white;
-  }
 }
 
 .article {
   display: flex;
   position: relative;
   min-height: 300px;
+  height: 100%;
   flex-direction: column;
+
+  &--big {
+    padding: 22px 30px 30px;
+    color: $color-white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--fuji {
+    background-image: url('../img/art4_1920.jpg');
+  }
+
+  &--oblivion {
+    background-image: url('../img/art5_1920.jpg');
+  }
 
   &__picture {
     margin-bottom: 18px;
-
-    &--fuji, &--oblivion {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin-bottom: 0;
-    }
-  }
-
-  &__image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  &__image--ovlivion, &__image--fuji {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
   }
 
   &__header {
@@ -141,20 +134,28 @@
 
 @media(max-width: 1280px) {
   .projects {
+
+    // ГРИД-СПИСОК (8 столбцов)
     &__list {
-      display: grid;
       grid-template-columns: repeat(8, 1fr);
+      row-gap: 24px;
     }
 
     &__list-item--object {
       grid-column: span 4;
     }
-    &__list-item--fuji, &__list-item--oblivion {
-      grid-column: span 6;
+
+    &__list-item--fuji {
+      grid-column: span 5;
+    }
+
+    &__list-item--oblivion {
+      grid-column: span 5;
+      order: 2;
     }
 
     &__list-item--retouch, &__list-item--portret {
-      grid-column: span 3;
+      order: 1;
     }
   }
 
@@ -162,8 +163,157 @@
   .article {
     min-height: 285px;
 
-    &__image--object {
+    &--big {
+      min-height: 307px;
+      padding-top: 30px;
+    }
 
+    &--fuji {
+      background-image: url('../img/art4_1024.jpg');
+    }
+
+    &--oblivion {
+      background-image: url('../img/art5_1024.jpg');
+    }
+
+    &__image {
+      width: 100%;
+    }
+
+    &__hidden-text {
+      display: none;
+    }
+  }
+}
+
+
+@media(max-width: 970px) {
+  .projects {
+
+    // ГРИД-СПИСОК (6 столбцов)
+    &__list {
+      grid-template-columns: repeat(6, 1fr);
+      row-gap: 0;
+    }
+
+    &__list-item--object,
+    &__list-item--landscape,
+    &__list-item--port {
+      grid-column: span 2;
+      margin-bottom: 25px;
+    }
+
+    &__list-item--fuji {
+      grid-column: span 6;
+      margin-bottom: 30px;
+    }
+
+    &__list-item--retouch,
+    &__list-item--portret {
+      margin-bottom: 24px;
+    }
+
+    &__list-item--oblivion {
+      grid-column: span 6;
+    }
+  }
+
+  .article {
+    min-height: 300px;
+
+    &--portret,
+    &--retouch {
+      min-height: 307px;
+    }
+
+    &--fuji {
+      background-image: url('../img/art4_768.jpg');
+    }
+
+    &--oblivion {
+      background-image: url('../img/art5_768.jpg');
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .projects {
+    padding-top: 50px;
+    padding-bottom: 25px;
+
+    &__header {
+      font-size: 18px;
+      line-height: 23px;
+      margin-bottom: 16px;
+    }
+
+    // ГРИД-СПИСОК (2 столбца)
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 24px;
+    }
+
+    &__list-item {
+      margin-bottom: 0;
+      grid-column: span 2;
+    }
+
+    &__list-item--fuji {
+      margin-bottom: 6px;
+    }
+
+    &__list-item--retouch,
+    &__list-item--portret {
+      margin-bottom: 1px;
+    }
+  }
+
+  .article {
+    min-height: 300px;
+
+    &--port,
+    &--landscape,
+    &--object {
+      min-height: 278px;
+    }
+
+    &--big {
+      min-height: 422px;
+      padding: 196px 30px 30px 29px;
+    }
+
+    &--fuji {
+      background-image: url('../img/art4_320.jpg');
+    }
+
+    &--oblivion {
+      background-image: url('../img/art5_320.jpg');
+    }
+
+    &__date--fuji, &__date--oblivion {
+      margin-bottom: 6px;
+    }
+
+    &__header {
+      margin-bottom: 11px;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 16px;
+      padding: 9px 18px;
+    }
+
+    &__description--fuji, &__description--oblivion {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__hashtag {
+      right: 5px;
+      top: 5px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }

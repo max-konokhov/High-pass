@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const searchBlockTimeLine = gsap.timeline({paused: true});
 
-  // Анимация формы
+  // Анимация формы поиска
   searchBlockTimeLine
     .to(btnOpenSearch, {visibility: 'hidden', opacity: 0, duration: 0.4})
     .to(searchInput, {display: 'block', scaleX: 1, opacity: 1, duration: 0.3}, "-=0.4")
@@ -15,14 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   btnOpenSearch.addEventListener('click', function() {
     searchBlockTimeLine.play();
-
   });
 
   btnCloseSearch.addEventListener('click', function() {
     searchBlockTimeLine.reverse();
   });
-
-
 
 
 
@@ -42,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
         btnCloseBurger.style.opacity = null;
         menuList.style.opacity = null;
         menuList.style.transform = null;
-
     },
     paused: true,
   });
@@ -61,5 +57,26 @@ document.addEventListener('DOMContentLoaded', function () {
   btnCloseBurger.addEventListener('click', function() {
     burgerTimeLine.reverse();
   });
+
+
+
+  // Плавный переход по якорным ссылкам
+  const anchors = document.querySelectorAll('a.js-scroll')
+
+  for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      const blockID = anchor.getAttribute('href')
+
+      document.querySelector(blockID).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+
+      //добавил реверс бургер меню по клику
+      burgerTimeLine.reverse();
+    })
+  }
 
 });

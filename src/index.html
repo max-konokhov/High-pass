@@ -53,12 +53,12 @@
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link js-scroll">
+              <a href="#" class="menu__link">
                 <span class="menu__link-text">Услуги</span>
               </a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link js-scroll">
+              <a href="#" class="menu__link">
                 <span class="menu__link-text">Мастер-классы</span>
               </a>
             </li>
@@ -201,7 +201,7 @@
 
           <!-- Пейзаж (№1) -->
           <li class="projects__list-item projects__list-item--landscape">
-            <article class="projects__article article article--landscape">
+            <div class="projects__article article article--landscape">
               <picture class="article__picture">
                 <source media="(max-width: 576px)" srcset="img/art1_320.jpg">
                 <source media="(max-width: 970px)" srcset="img/art1_1024.jpg">
@@ -219,12 +219,12 @@
                 <span class="article__text-date">16 июня</span>
               </div>
               <p class="article__hashtag hashtag">#пейзаж</p>
-            </article>
+            </div>
           </li>
 
           <!-- Портрет (№2) -->
           <li class="projects__list-item projects__list-item--port">
-            <article class="projects__article article article--port">
+            <div class="projects__article article article--port">
               <picture class="article__picture">
                 <source media="(max-width: 576px)" srcset="img/art2_320.jpg">
                 <source media="(max-width: 970px)" srcset="img/art2_1024.jpg">
@@ -242,12 +242,12 @@
                 <span class="article__text-date">28 мая</span>
               </div>
               <p class="article__hashtag hashtag">#портрет</p>
-            </article>
+            </div>
           </li>
 
           <!-- Предмет (№3) -->
           <li class="projects__list-item projects__list-item--object">
-            <article class="projects__article article article--object">
+            <div class="projects__article article article--object">
               <picture class="article__picture">
                 <source media="(max-width: 576px)" srcset="img/art3_320.jpg">
                 <source media="(max-width: 970px)" srcset="img/art3_768.jpg">
@@ -265,44 +265,68 @@
                 <span class="article__text-date">14 мая</span>
               </div>
               <p class="article__hashtag hashtag">#предмет</p>
-            </article>
+            </div>
           </li>
 
           <!-- Fuji (№4) -->
           <li class="projects__list-item projects__list-item--fuji">
-            <article class="projects__article article article--fuji article--big">
-              <div class="article__date article__date--fuji">
-                <svg class="article__calendar-svg article__calendar-svg--fuji" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/sprite.svg#calendar_ico"></use>
-                </svg>
-                <span class="article__text-date article__text-date--fuji">9 апреля</span>
+            <div class="projects__article article article--fuji article--big">
+              <picture class="article__picture article__picture--big">
+                <source media="(max-width: 576px)" srcset="img/art4_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art4_768.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art4_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art4_1920.jpg">
+
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image article__image--fuji" src="img/art4_1920.jpg" alt="Fuji">
+              </picture>
+
+              <div class="article__content-box article__content-box--fuji">
+                <div class="article__date article__date--fuji">
+                  <svg class="article__calendar-svg article__calendar-svg--fuji" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprite.svg#calendar_ico"></use>
+                  </svg>
+                  <span class="article__text-date article__text-date--fuji">9 апреля</span>
+                </div>
+                <h3 class="article__header article__header--fuji">Cемантический разбор</h3>
+                <p class="article__description article__description--fuji">В рамках спецификации современных стандартов, интерактивные прототипы</p>
               </div>
-              <h3 class="article__header article__header--fuji">Cемантический разбор</h3>
-              <p class="article__description article__description--fuji">В рамках спецификации современных стандартов, интерактивные прототипы</p>
-              <a class="article__link" href="#">О проекте</a>
+              <a class="article__link article__link--fuji" href="#">О проекте</a>
               <p class="article__hashtag hashtag">#fuji</p>
-            </article>
+            </div>
           </li>
 
           <!-- Oblivion (№5) -->
           <li class="projects__list-item projects__list-item--oblivion">
-            <article class="projects__article article article--oblivion article--big">
-              <div class="article__date article__date--oblivion">
-                <svg class="article__calendar-svg article__calendar-svg--oblivion" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="img/sprite.svg#calendar_ico"></use>
-                </svg>
-                <span class="article__text-date article__text-date--oblivion">20 марта</span>
+            <div class="projects__article article article--oblivion article--big">
+              <picture class="article__picture article__picture--big">
+                <source media="(max-width: 576px)" srcset="img/art5_320.jpg">
+                <source media="(max-width: 970px)" srcset="img/art5_768.jpg">
+                <source media="(max-width: 1280px)" srcset="img/art5_1024.jpg">
+                <source media="(min-width: 1281px)" srcset="img/art5_1920.jpg">
+
+                <!-- Здесь картинка от 1281 до 1920 и выше -->
+                <img class="article__image article__image--oblivion" src="img/art5_1920.jpg" alt="oblivion">
+              </picture>
+
+              <div class="article__content-box article__content-box--oblivion">
+                <div class="article__date article__date--oblivion">
+                  <svg class="article__calendar-svg article__calendar-svg--oblivion" width="14" height="14" viewbox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="img/sprite.svg#calendar_ico"></use>
+                  </svg>
+                  <span class="article__text-date article__text-date--oblivion">20 марта</span>
+                </div>
+                <h3 class="article__header article__header--oblivion">Забвение</h3>
+                <p class="article__description article__description--oblivion">Играет важную роль в формировании глубокомысленных рассуждений</p>
               </div>
-              <h3 class="article__header article__header--oblivion">Забвение</h3>
-              <p class="article__description article__description--oblivion">Играет важную роль в формировании глубокомысленных рассуждений</p>
-              <a class="article__link" href="#">О проекте</a>
+              <a class="article__link article__link--oblivion" href="#">О проекте</a>
               <p class="article__hashtag hashtag">#проектзабвение</p>
-            </article>
+            </div>
           </li>
 
           <!-- Ретушь (№6) -->
           <li class="projects__list-item projects__list-item--retouch">
-            <article class="projects__article article article--retouch">
+            <div class="projects__article article article--retouch">
               <picture class="article__picture">
                 <source media="(max-width: 576px)" srcset="img/art6_320.jpg">
                 <source media="(max-width: 970px)" srcset="img/art6_768.jpg">
@@ -320,12 +344,12 @@
                 <span class="article__text-date">9 марта</span>
               </div>
               <p class="article__hashtag hashtag">#ретушь</p>
-            </article>
+            </div>
           </li>
 
           <!-- Портрет-2 (№7) -->
           <li class="projects__list-item projects__list-item--portret">
-            <article class="projects__article article article--portret">
+            <div class="projects__article article article--portret">
               <picture class="article__picture">
                 <source media="(max-width: 576px)" srcset="img/art7_320.jpg">
                 <source media="(max-width: 970px)" srcset="img/art7_1024.jpg">
@@ -343,13 +367,12 @@
                 <span class="article__text-date">1 марта</span>
               </div>
               <p class="article__hashtag hashtag">#портрет</p>
-            </article>
+            </div>
           </li>
         </ul>
       </div>
     </section>
-
-    <!-- Секция "Проекты" -->
+    <!-- Секция "Контакты" -->
     <section class="section contacts" id="contacts">
       <div class="contacts__container container"></div>
     </section>

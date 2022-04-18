@@ -1,4 +1,5 @@
-import './_gsap.min';
-import './_inputmask.min';
-import './_just-validate.min';
-import './_form';
+import './vendor/_gsap.min';
+import './vendor/_inputmask.min';
+import './vendor/_just-validate.min';
+import './_search';
+import './_burger';

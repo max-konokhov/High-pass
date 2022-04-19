@@ -1,0 +1,324 @@
+.contacts {
+  padding-top: 34px;
+  padding-bottom: 62px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+  &__header {
+    grid-column: span 12;
+    margin-bottom: 22px;
+  }
+
+  &__map-box {
+    position: relative;
+    grid-column: span 8;
+    height: 460px;
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__address-box {
+    position: absolute;
+    display: none;
+    width: 48.3%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 175px 60px 50px 60px;
+    flex-direction: column;
+    background-color: $color-dark-semitransparent;
+    color: $color-white;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  &__btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-bottom: 135px;
+    fill: $color-grey-two;
+    transition: fill $short;
+    opacity: 0;
+
+    &:hover {
+      fill: $color-orange;
+    }
+
+    &:focus:not(:hover):not(:active) {
+      fill: $color-dark-orange;
+    }
+
+    &:active {
+      fill: $color-saturated-orange;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 22px;
+    opacity: 0;
+  }
+
+  &__address {
+    max-width: 300px;
+    margin-bottom: 2px;
+    font-family: $font-Roboto;
+    font-style: normal;
+    line-height: 28px;
+    color: $color-filthy-white;
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    line-height: 21px;
+    transition: color $short;
+    transform-origin: left;
+    transform: scaleX(0);
+    opacity: 0;
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:focus:not(:hover):not(:active) {
+      color: $color-dark-orange
+    }
+
+    &:active {
+      color: $color-saturated-orange;
+    }
+  }
+
+  &__link-ico {
+    margin-right: 3px;
+  }
+
+  &__form-box {
+    grid-column: span 4;
+    color: $color-light-grey-two;
+  }
+
+  &__form-title {
+    margin-bottom: 5px;
+    font-size: 24px;
+    line-height: 22px;
+    color: $color-dark;
+  }
+
+  &__description {
+    margin-bottom: 14px;
+    font-family: $font-Roboto;
+    line-height: 22px;
+  }
+}
+
+.app-form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 20px;
+
+  &__label {
+    width: 100%;
+  }
+
+  &__input {
+    @include input-form;
+    background-color: $color-filthy-white-two;
+
+    &::placeholder {
+      color: $color-filthy-white;
+      transition: color $short;
+    }
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:hover::placeholder {
+      color: $color-orange;
+    }
+
+    &:focus:not(:hover):not(:active) {
+      outline: 1px solid $color-orange;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 150px;
+    @include input-form;
+    background-color: $color-filthy-white-two;
+
+    &::placeholder {
+      color: $color-filthy-white;
+      transition: color $short;
+    }
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:hover::placeholder {
+      color: $color-orange;
+    }
+
+    &:focus:not(:hover):not(:active) {
+      outline: 1px solid $color-orange;
+    }
+  }
+}
+
+/* Делаю карту черно-белой */
+[class*="ground-pane"] {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+
+@media(max-width: 1280px) {
+  .contacts {
+    padding-bottom: 61px;
+
+    &__container {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    &__header {
+      grid-column: span 8;
+    }
+
+    &__map-box {
+      grid-column: span 5;
+    }
+
+    &__form-box {
+      grid-column: span 3;
+    }
+
+    &__address-box {
+      width: 100%;
+      top: auto;
+      padding: 25px 30px 26px;
+    }
+
+    &__address {
+      max-width: 450px;
+    }
+    &__link {
+      color: $color-orange;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+
+@media(max-width: 970px) {
+  .contacts {
+    padding-bottom: 68px;
+
+    &__container {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &__header {
+      grid-column: span 6;
+    }
+
+    &__map-box {
+      grid-column: span 6;
+      min-height: 460px;
+      max-height:  460px;
+      margin-bottom: 24px;
+    }
+
+    &__form-box {
+      grid-column: span 4;
+    }
+  }
+}
+
+@media(max-width: 576px) {
+  .contacts {
+    padding-top: 25px;
+    padding-bottom: 50px;
+
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__header {
+      grid-column: span 2;
+      margin-bottom: 14px;
+    }
+
+    &__map-box {
+      grid-column: span 2;
+      margin-left: -21px;
+      margin-right: -21px;
+      margin-bottom: 23px;
+      height: 472px;
+    }
+
+    &__address-box {
+      padding: 26px 34px 14px 18px;
+    }
+
+    &__form-title,
+    &__title {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+    }
+
+    &__address {
+      margin-bottom: 11px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__link {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 500;
+    }
+
+    &__form-box {
+      grid-column: span 2;
+    }
+
+    &__description {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  .app-form {
+    &__input,
+    &__textarea {
+      padding: 12px 23px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}

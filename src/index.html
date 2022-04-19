@@ -11,6 +11,7 @@
   <link rel="preload" href="fonts/TTFirsNeue-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/TTFirsNeue-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/main.min.css">
+  <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script defer src="js/main.js"></script>
   <title>High pass</title>
 </head>
@@ -372,14 +373,92 @@
         </ul>
       </div>
     </section>
+
     <!-- Секция "Контакты" -->
     <section class="section contacts" id="contacts">
-      <div class="contacts__container container"></div>
+      <div class="contacts__container container">
+        <h2 class="contacts__header header-two">Контакты</h2>
+        <div class="contacts__map-box">
+          <div class="contacts__map js-map" id="map"></div>
+          <div class="contacts__address-box js-wrap-popup">
+            <button class="contacts__btn-close js-close-popup" type="button">
+              <svg class="contacts__btn-close-ico" width="20" height="20" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#close_ico"></use>
+              </svg>
+            </button>
+            <p class="contacts__title">Студия “High pass”</p>
+            <address class="contacts__address">107045, Москва, Даев переулок, дом 41, бизнес-центр «Даев Плаза», этаж 8, офис № 82</address>
+            <a class="contacts__link" href="tel:+749542423532" aria-label="телефон 849542423532">
+              <svg class="contacts__link-ico" width="16" height="16" viewbox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <use href="img/sprite.svg#phone"></use>
+              </svg>
+              +7 (495) 42-423-532
+            </a>
+          </div>
+        </div>
+
+
+        <div class="contacts__form-box">
+          <p class="contacts__form-title">Оставить заявку</p>
+          <p class="contacts__description">Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия</p>
+          <form action="/" class="contacts__form app-form js-app-form">
+            <label class="app-form__label">
+              <input class="app-form__input" type="text" placeholder="Имя">
+            </label>
+            <label class="app-form__label">
+              <input class="app-form__input" type="text" placeholder="E-mail">
+            </label>
+            <textarea class="app-form__textarea" placeholder="Комментарий"></textarea>
+            <button class="app-form__btn-submit btn-submit-form">Отправить</button>
+          </form>
+        </div>
+
+      </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-box"></div>
+    <div class="footer__container container">
+      <div class="footer__logo-box">
+      <a class="footer__logo-link">
+        <img class="footer__logo-image" src="img/logo.png" alt="Логотип High pass">
+      </a>
+      <p class="footer__company">Фотостудия High pass® 2018-2020</p>
+      </div>
+      <blockquote class="footer__blockquote">
+        <p class="footer__blockqute-text">
+          Которая из моих фотографий самая любимая? Та, которую я собираюсь снять завтра.
+        </p>
+        <cite class="footer__blockqute-autor">© Имоджен Каннингем</cite>
+      </blockquote>
+
+      <div class="footer__social-box">
+        <p class="footer__social-caption">Больше интересного:</p>
+        <ul class="footer__social-list soc-list">
+          <li class="soc-list__item">
+            <a href="#" class="soc-list__link">
+              <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#instagram_ico"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="soc-list__item">
+            <a href="#" class="soc-list__link">
+              <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#facebook_ico"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="soc-list__item">
+            <a href="#" class="soc-list__link">
+              <svg class="soc-list__ico" width="30" height="30" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#vk_ico"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </footer>
 
 </body>

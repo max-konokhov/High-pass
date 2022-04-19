@@ -59,16 +59,7 @@
   }
 
   &__input {
-    width: 100%;
-    padding: 15px 23px 16px;
-    font-family: $font-Roboto;
-    background-color: $color-grey;
-    border: none;
-    line-height: 19px;
-    color: $color-filthy-white;
-    transition-property: color, outline;
-    transition-duration: 0.3s;
-    transition-timing-function: ease;
+    @include input-form;
 
     &::placeholder {
       color: $color-filthy-white;

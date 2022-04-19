@@ -264,12 +264,14 @@
     &__nav {
       margin-left: 30px;
       margin-right: 80px;
-
     }
 
     &__form {
       display: block;
+    }
 
+    &__social-list {
+      display: none;
     }
   }
 
@@ -277,10 +279,6 @@
     &__item:not(:last-child) {
       margin-right: 33px;
     }
-  }
-
-  .soc-list {
-    display: none;
   }
 }
 

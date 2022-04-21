@@ -86,14 +86,43 @@
 
 @media (max-width: 576px) {
   .footer {
+    padding-top: 31px;
+    padding-bottom: 0;
+
     &__container {
       flex-direction: column-reverse;
     }
 
     &__logo-box {
       display: flex;
+      position: relative;
+      width: 100%;
+      padding-bottom: 13px;
+      padding-top: 14px;
       flex-direction: column;
       align-items: center;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: -21px;
+        right: -21px;
+        background-color: $color-grey;
+      }
+    }
+
+
+    &__logo-image {
+      width: 112px;
+      position: relative;
+    }
+
+    &__company {
+      font-size: 10px;
+      line-height: 13px;
+      position: relative;
     }
 
     &__social-box {

@@ -5,3 +5,4 @@ import './_search';
 import './_burger';
 import './_map';
 import './_map-popup';
+import './_valid-form';
